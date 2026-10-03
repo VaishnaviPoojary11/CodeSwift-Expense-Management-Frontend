@@ -1,0 +1,44 @@
+/* =================================================
+   GLOBAL THEME — FINAL PALETTE
+   ================================================= */
+
+/* =================================================
+   GLOBAL THEME
+   ================================================= */
+
+/* =================================================
+   GLOBAL THEME
+   ================================================= */
+
+:root {
+    --primary: #80505B;
+    --primary-dark: #6B414B;
+
+    --accent: #9A4F43;
+
+    --dark: #252322;
+
+    --background: #F8F5EF;
+    --card: #FFFFFF;
+
+    --text: #252322;
+    --muted: #74716D;
+
+    --border: #E5DED4;
+
+    --success: #668F70;
+    --danger: #C76B6B;
+
+    font-family: Inter, Arial, sans-serif;
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--text);
+}
