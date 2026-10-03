@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import API_URL from "./api";
 
 import Welcome from "./components/Welcome";
 import CreateGroup from "./components/CreateGroup";
@@ -23,7 +24,7 @@ function App() {
 
   const loadGroups = async () => {
     try {
-      const response = await fetch("http://localhost:8080/api/groups");
+      const response = await fetch(`${API_URL}/api/groups`);
 
       if (!response.ok) {
         throw new Error("Failed to load groups");
@@ -45,7 +46,7 @@ function App() {
     try {
       /* CREATE GROUP */
 
-      const groupResponse = await fetch("http://localhost:8080/api/groups", {
+      const groupResponse = await fetch(`${API_URL}/api/groups`, {
         method: "POST",
 
         headers: {
@@ -67,7 +68,7 @@ function App() {
 
       for (const member of memberList) {
         const memberResponse = await fetch(
-          "http://localhost:8080/api/members",
+          `${API_URL}/api/members`,
           {
             method: "POST",
 
@@ -93,7 +94,7 @@ function App() {
       /* LOAD SAVED MEMBERS */
 
       const membersResponse = await fetch(
-        `http://localhost:8080/api/members/group/${createdGroup.id}`,
+        `${API_URL}/api/members/group/${createdGroup.id}`,
       );
 
       if (!membersResponse.ok) {

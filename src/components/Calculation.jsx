@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import API_URL from "../api";
 
 function Calculation({
   groupId,
@@ -26,11 +27,11 @@ function Calculation({
       setLoading(true);
 
       const membersResponse = await fetch(
-        `http://localhost:8080/api/members/group/${groupId}`,
+        `${API_URL}/api/members/group/${groupId}`,
       );
 
       const expensesResponse = await fetch(
-        `http://localhost:8080/api/expenses/group/${groupId}`,
+        `${API_URL}/api/expenses/group/${groupId}`,
       );
 
       if (!membersResponse.ok || !expensesResponse.ok) {
